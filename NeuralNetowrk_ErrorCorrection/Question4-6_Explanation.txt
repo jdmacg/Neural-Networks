@@ -1,0 +1,243 @@
+Error correction learning was implemented to separate Versicolor and Virginia.
+The loop terminates when the total mean square error (stored in a double) was the same as the total mean sqaure error as the previous iteration.
+This design decision was made, because with a low (and more accurate)learning rate of 0.0005, the maximum possible accuracy 
+of a double in c++ could be calculated in under two seconds. Testing different values, this seemed like a good trade-off between time and accuracy.
+A global iteration limit of 1000000000 was imposed to halt operation if the mean square error did not stabilize.
+
+The output of the program for the versicolor/test data case is pasted below:
+
+The weight vector found was {0.392367, 0.784369, -0.655877, -1.6001, 1.04778}
+Data Point: 5, 2, 3.5, 1        Predicted class: Iris-versicolor. Correct
+Data Point: 5.9, 3, 4.2, 1.5    Predicted class: Iris-versicolor. Correct
+Data Point: 6, 2.2, 4, 1        Predicted class: Iris-versicolor. Correct
+Data Point: 6.1, 2.9, 4.7, 1.4  Predicted class: Iris-versicolor. Correct
+Data Point: 5.6, 2.9, 3.6, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 6.7, 3.1, 4.4, 1.4  Predicted class: Iris-versicolor. Correct
+Data Point: 5.6, 3, 4.5, 1.5    Predicted class: Iris-versicolor. Correct
+Data Point: 5.8, 2.7, 4.1, 1    Predicted class: Iris-versicolor. Correct
+Data Point: 6.2, 2.2, 4.5, 1.5  Predicted class: not Iris-versicolor. Incorrect
+Data Point: 5.6, 2.5, 3.9, 1.1  Predicted class: Iris-versicolor. Correct
+Data Point: 6.1, 3, 4.9, 1.8    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.4, 2.8, 5.6, 2.1  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.2, 3, 5.8, 1.6    Predicted class: not Iris-versicolor. Correct
+Data Point: 7.4, 2.8, 6.1, 1.9  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.9, 3.8, 6.4, 2    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.4, 2.8, 5.6, 2.2  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.3, 2.8, 5.1, 1.5  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.1, 2.6, 5.6, 1.4  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.7, 3, 6.1, 2.3    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.3, 3.4, 5.6, 2.4  Predicted class: not Iris-versicolor. Correct
+Accuracy classifying Iris-versicolor: %90.
+Accuracy classifying non Iris-versicolor: %100
+
+Process returned 0 (0x0)   execution time : 1.359 s
+Press any key to continue.
+
+
+The output of the program for the versicolor/training data case is pasted below:
+
+The weight vector found was {0.392367, 0.784369, -0.655877, -1.6001, 1.04778}
+Data Point: 7, 3.2, 4.7, 1.4    Predicted class: Iris-versicolor. Correct
+Data Point: 6.4, 3.2, 4.5, 1.5  Predicted class: Iris-versicolor. Correct
+Data Point: 6.9, 3.1, 4.9, 1.5  Predicted class: Iris-versicolor. Correct
+Data Point: 5.5, 2.3, 4, 1.3    Predicted class: Iris-versicolor. Correct
+Data Point: 6.5, 2.8, 4.6, 1.5  Predicted class: Iris-versicolor. Correct
+Data Point: 5.7, 2.8, 4.5, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 6.3, 3.3, 4.7, 1.6  Predicted class: Iris-versicolor. Correct
+Data Point: 4.9, 2.4, 3.3, 1    Predicted class: Iris-versicolor. Correct
+Data Point: 6.6, 2.9, 4.6, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 5.2, 2.7, 3.9, 1.4  Predicted class: Iris-versicolor. Correct
+Data Point: 5.9, 3.2, 4.8, 1.8  Predicted class: not Iris-versicolor. Incorrect
+Data Point: 6.1, 2.8, 4, 1.3    Predicted class: Iris-versicolor. Correct
+Data Point: 6.3, 2.5, 4.9, 1.5  Predicted class: not Iris-versicolor. Incorrect
+Data Point: 6.1, 2.8, 4.7, 1.2  Predicted class: Iris-versicolor. Correct
+Data Point: 6.4, 2.9, 4.3, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 6.6, 3, 4.4, 1.4    Predicted class: Iris-versicolor. Correct
+Data Point: 6.8, 2.8, 4.8, 1.4  Predicted class: Iris-versicolor. Correct
+Data Point: 6.7, 3, 5, 1.7      Predicted class: Iris-versicolor. Correct
+Data Point: 6, 2.9, 4.5, 1.5    Predicted class: Iris-versicolor. Correct
+Data Point: 5.7, 2.6, 3.5, 1    Predicted class: Iris-versicolor. Correct
+Data Point: 5.5, 2.4, 3.8, 1.1  Predicted class: Iris-versicolor. Correct
+Data Point: 5.5, 2.4, 3.7, 1    Predicted class: Iris-versicolor. Correct
+Data Point: 5.8, 2.7, 3.9, 1.2  Predicted class: Iris-versicolor. Correct
+Data Point: 6, 2.7, 5.1, 1.6    Predicted class: not Iris-versicolor. Incorrect
+Data Point: 5.4, 3, 4.5, 1.5    Predicted class: Iris-versicolor. Correct
+Data Point: 6, 3.4, 4.5, 1.6    Predicted class: Iris-versicolor. Correct
+Data Point: 6.7, 3.1, 4.7, 1.5  Predicted class: Iris-versicolor. Correct
+Data Point: 6.3, 2.3, 4.4, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 5.6, 3, 4.1, 1.3    Predicted class: Iris-versicolor. Correct
+Data Point: 5.5, 2.5, 4, 1.3    Predicted class: Iris-versicolor. Correct
+Data Point: 5.5, 2.6, 4.4, 1.2  Predicted class: Iris-versicolor. Correct
+Data Point: 6.1, 3, 4.6, 1.4    Predicted class: Iris-versicolor. Correct
+Data Point: 5.8, 2.6, 4, 1.2    Predicted class: Iris-versicolor. Correct
+Data Point: 5, 2.3, 3.3, 1      Predicted class: Iris-versicolor. Correct
+Data Point: 5.6, 2.7, 4.2, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 5.7, 3, 4.2, 1.2    Predicted class: Iris-versicolor. Correct
+Data Point: 5.7, 2.9, 4.2, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 6.2, 2.9, 4.3, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 5.1, 2.5, 3, 1.1    Predicted class: Iris-versicolor. Correct
+Data Point: 5.7, 2.8, 4.1, 1.3  Predicted class: Iris-versicolor. Correct
+Data Point: 6.3, 3.3, 6, 2.5    Predicted class: not Iris-versicolor. Correct
+Data Point: 5.8, 2.7, 5.1, 1.9  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.1, 3, 5.9, 2.1    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.3, 2.9, 5.6, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.5, 3, 5.8, 2.2    Predicted class: not Iris-versicolor. Correct
+Data Point: 7.6, 3, 6.6, 2.1    Predicted class: not Iris-versicolor. Correct
+Data Point: 4.9, 2.5, 4.5, 1.7  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.3, 2.9, 6.3, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.7, 2.5, 5.8, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.2, 3.6, 6.1, 2.5  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.5, 3.2, 5.1, 2    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.4, 2.7, 5.3, 1.9  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.8, 3, 5.5, 2.1    Predicted class: not Iris-versicolor. Correct
+Data Point: 5.7, 2.5, 5, 2      Predicted class: not Iris-versicolor. Correct
+Data Point: 5.8, 2.8, 5.1, 2.4  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.4, 3.2, 5.3, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.5, 3, 5.5, 1.8    Predicted class: not Iris-versicolor. Correct
+Data Point: 7.7, 3.8, 6.7, 2.2  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.7, 2.6, 6.9, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 6, 2.2, 5, 1.5      Predicted class: not Iris-versicolor. Correct
+Data Point: 6.9, 3.2, 5.7, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 5.6, 2.8, 4.9, 2    Predicted class: not Iris-versicolor. Correct
+Data Point: 7.7, 2.8, 6.7, 2    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.3, 2.7, 4.9, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.7, 3.3, 5.7, 2.1  Predicted class: not Iris-versicolor. Correct
+Data Point: 7.2, 3.2, 6, 1.8    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.2, 2.8, 4.8, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.4, 3.1, 5.5, 1.8  Predicted class: not Iris-versicolor. Correct
+Data Point: 6, 3, 4.8, 1.8      Predicted class: not Iris-versicolor. Correct
+Data Point: 6.9, 3.1, 5.4, 2.1  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.7, 3.1, 5.6, 2.4  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.9, 3.1, 5.1, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 5.8, 2.7, 5.1, 1.9  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.8, 3.2, 5.9, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.7, 3.3, 5.7, 2.5  Predicted class: not Iris-versicolor. Correct
+Data Point: 6.7, 3, 5.2, 2.3    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.3, 2.5, 5, 1.9    Predicted class: not Iris-versicolor. Correct
+Data Point: 6.5, 3, 5.2, 2      Predicted class: not Iris-versicolor. Correct
+Data Point: 6.2, 3.4, 5.4, 2.3  Predicted class: not Iris-versicolor. Correct
+Data Point: 5.9, 3, 5.1, 1.8    Predicted class: not Iris-versicolor. Correct
+Accuracy classifying Iris-versicolor: %92.5.
+Accuracy classifying non Iris-versicolor: %100
+
+Process returned 0 (0x0)   execution time : 1.450 s
+Press any key to continue.
+
+The output of the program for the verginica/test data case is pasted below:
+
+The weight vector found was {-0.392367, -0.784369, 0.655877, 1.6001, -1.04778}
+Data Point: 5, 2, 3.5, 1        Predicted class: not Iris-virginica. Correct
+Data Point: 5.9, 3, 4.2, 1.5    Predicted class: not Iris-virginica. Correct
+Data Point: 6, 2.2, 4, 1        Predicted class: not Iris-virginica. Correct
+Data Point: 6.1, 2.9, 4.7, 1.4  Predicted class: not Iris-virginica. Correct
+Data Point: 5.6, 2.9, 3.6, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 6.7, 3.1, 4.4, 1.4  Predicted class: not Iris-virginica. Correct
+Data Point: 5.6, 3, 4.5, 1.5    Predicted class: not Iris-virginica. Correct
+Data Point: 5.8, 2.7, 4.1, 1    Predicted class: not Iris-virginica. Correct
+Data Point: 6.2, 2.2, 4.5, 1.5  Predicted class: Iris-virginica. Incorrect
+Data Point: 5.6, 2.5, 3.9, 1.1  Predicted class: not Iris-virginica. Correct
+Data Point: 6.1, 3, 4.9, 1.8    Predicted class: Iris-virginica. Correct
+Data Point: 6.4, 2.8, 5.6, 2.1  Predicted class: Iris-virginica. Correct
+Data Point: 7.2, 3, 5.8, 1.6    Predicted class: Iris-virginica. Correct
+Data Point: 7.4, 2.8, 6.1, 1.9  Predicted class: Iris-virginica. Correct
+Data Point: 7.9, 3.8, 6.4, 2    Predicted class: Iris-virginica. Correct
+Data Point: 6.4, 2.8, 5.6, 2.2  Predicted class: Iris-virginica. Correct
+Data Point: 6.3, 2.8, 5.1, 1.5  Predicted class: Iris-virginica. Correct
+Data Point: 6.1, 2.6, 5.6, 1.4  Predicted class: Iris-virginica. Correct
+Data Point: 7.7, 3, 6.1, 2.3    Predicted class: Iris-virginica. Correct
+Data Point: 6.3, 3.4, 5.6, 2.4  Predicted class: Iris-virginica. Correct
+Accuracy classifying Iris-virginica: %100.
+Accuracy classifying non Iris-virginica: %90
+
+Process returned 0 (0x0)   execution time : 1.587 s
+Press any key to continue.
+
+The output of the program for the verginica/training data case is pasted below:
+
+The weight vector found was {-0.392367, -0.784369, 0.655877, 1.6001, -1.04778}
+Data Point: 7, 3.2, 4.7, 1.4    Predicted class: not Iris-virginica. Correct
+Data Point: 6.4, 3.2, 4.5, 1.5  Predicted class: not Iris-virginica. Correct
+Data Point: 6.9, 3.1, 4.9, 1.5  Predicted class: not Iris-virginica. Correct
+Data Point: 5.5, 2.3, 4, 1.3    Predicted class: not Iris-virginica. Correct
+Data Point: 6.5, 2.8, 4.6, 1.5  Predicted class: not Iris-virginica. Correct
+Data Point: 5.7, 2.8, 4.5, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 6.3, 3.3, 4.7, 1.6  Predicted class: not Iris-virginica. Correct
+Data Point: 4.9, 2.4, 3.3, 1    Predicted class: not Iris-virginica. Correct
+Data Point: 6.6, 2.9, 4.6, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 5.2, 2.7, 3.9, 1.4  Predicted class: not Iris-virginica. Correct
+Data Point: 5.9, 3.2, 4.8, 1.8  Predicted class: Iris-virginica. Incorrect
+Data Point: 6.1, 2.8, 4, 1.3    Predicted class: not Iris-virginica. Correct
+Data Point: 6.3, 2.5, 4.9, 1.5  Predicted class: Iris-virginica. Incorrect
+Data Point: 6.1, 2.8, 4.7, 1.2  Predicted class: not Iris-virginica. Correct
+Data Point: 6.4, 2.9, 4.3, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 6.6, 3, 4.4, 1.4    Predicted class: not Iris-virginica. Correct
+Data Point: 6.8, 2.8, 4.8, 1.4  Predicted class: not Iris-virginica. Correct
+Data Point: 6.7, 3, 5, 1.7      Predicted class: not Iris-virginica. Correct
+Data Point: 6, 2.9, 4.5, 1.5    Predicted class: not Iris-virginica. Correct
+Data Point: 5.7, 2.6, 3.5, 1    Predicted class: not Iris-virginica. Correct
+Data Point: 5.5, 2.4, 3.8, 1.1  Predicted class: not Iris-virginica. Correct
+Data Point: 5.5, 2.4, 3.7, 1    Predicted class: not Iris-virginica. Correct
+Data Point: 5.8, 2.7, 3.9, 1.2  Predicted class: not Iris-virginica. Correct
+Data Point: 6, 2.7, 5.1, 1.6    Predicted class: Iris-virginica. Incorrect
+Data Point: 5.4, 3, 4.5, 1.5    Predicted class: not Iris-virginica. Correct
+Data Point: 6, 3.4, 4.5, 1.6    Predicted class: not Iris-virginica. Correct
+Data Point: 6.7, 3.1, 4.7, 1.5  Predicted class: not Iris-virginica. Correct
+Data Point: 6.3, 2.3, 4.4, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 5.6, 3, 4.1, 1.3    Predicted class: not Iris-virginica. Correct
+Data Point: 5.5, 2.5, 4, 1.3    Predicted class: not Iris-virginica. Correct
+Data Point: 5.5, 2.6, 4.4, 1.2  Predicted class: not Iris-virginica. Correct
+Data Point: 6.1, 3, 4.6, 1.4    Predicted class: not Iris-virginica. Correct
+Data Point: 5.8, 2.6, 4, 1.2    Predicted class: not Iris-virginica. Correct
+Data Point: 5, 2.3, 3.3, 1      Predicted class: not Iris-virginica. Correct
+Data Point: 5.6, 2.7, 4.2, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 5.7, 3, 4.2, 1.2    Predicted class: not Iris-virginica. Correct
+Data Point: 5.7, 2.9, 4.2, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 6.2, 2.9, 4.3, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 5.1, 2.5, 3, 1.1    Predicted class: not Iris-virginica. Correct
+Data Point: 5.7, 2.8, 4.1, 1.3  Predicted class: not Iris-virginica. Correct
+Data Point: 6.3, 3.3, 6, 2.5    Predicted class: Iris-virginica. Correct
+Data Point: 5.8, 2.7, 5.1, 1.9  Predicted class: Iris-virginica. Correct
+Data Point: 7.1, 3, 5.9, 2.1    Predicted class: Iris-virginica. Correct
+Data Point: 6.3, 2.9, 5.6, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 6.5, 3, 5.8, 2.2    Predicted class: Iris-virginica. Correct
+Data Point: 7.6, 3, 6.6, 2.1    Predicted class: Iris-virginica. Correct
+Data Point: 4.9, 2.5, 4.5, 1.7  Predicted class: Iris-virginica. Correct
+Data Point: 7.3, 2.9, 6.3, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 6.7, 2.5, 5.8, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 7.2, 3.6, 6.1, 2.5  Predicted class: Iris-virginica. Correct
+Data Point: 6.5, 3.2, 5.1, 2    Predicted class: Iris-virginica. Correct
+Data Point: 6.4, 2.7, 5.3, 1.9  Predicted class: Iris-virginica. Correct
+Data Point: 6.8, 3, 5.5, 2.1    Predicted class: Iris-virginica. Correct
+Data Point: 5.7, 2.5, 5, 2      Predicted class: Iris-virginica. Correct
+Data Point: 5.8, 2.8, 5.1, 2.4  Predicted class: Iris-virginica. Correct
+Data Point: 6.4, 3.2, 5.3, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 6.5, 3, 5.5, 1.8    Predicted class: Iris-virginica. Correct
+Data Point: 7.7, 3.8, 6.7, 2.2  Predicted class: Iris-virginica. Correct
+Data Point: 7.7, 2.6, 6.9, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 6, 2.2, 5, 1.5      Predicted class: Iris-virginica. Correct
+Data Point: 6.9, 3.2, 5.7, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 5.6, 2.8, 4.9, 2    Predicted class: Iris-virginica. Correct
+Data Point: 7.7, 2.8, 6.7, 2    Predicted class: Iris-virginica. Correct
+Data Point: 6.3, 2.7, 4.9, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 6.7, 3.3, 5.7, 2.1  Predicted class: Iris-virginica. Correct
+Data Point: 7.2, 3.2, 6, 1.8    Predicted class: Iris-virginica. Correct
+Data Point: 6.2, 2.8, 4.8, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 6.4, 3.1, 5.5, 1.8  Predicted class: Iris-virginica. Correct
+Data Point: 6, 3, 4.8, 1.8      Predicted class: Iris-virginica. Correct
+Data Point: 6.9, 3.1, 5.4, 2.1  Predicted class: Iris-virginica. Correct
+Data Point: 6.7, 3.1, 5.6, 2.4  Predicted class: Iris-virginica. Correct
+Data Point: 6.9, 3.1, 5.1, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 5.8, 2.7, 5.1, 1.9  Predicted class: Iris-virginica. Correct
+Data Point: 6.8, 3.2, 5.9, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 6.7, 3.3, 5.7, 2.5  Predicted class: Iris-virginica. Correct
+Data Point: 6.7, 3, 5.2, 2.3    Predicted class: Iris-virginica. Correct
+Data Point: 6.3, 2.5, 5, 1.9    Predicted class: Iris-virginica. Correct
+Data Point: 6.5, 3, 5.2, 2      Predicted class: Iris-virginica. Correct
+Data Point: 6.2, 3.4, 5.4, 2.3  Predicted class: Iris-virginica. Correct
+Data Point: 5.9, 3, 5.1, 1.8    Predicted class: Iris-virginica. Correct
+Accuracy classifying Iris-virginica: %100.
+Accuracy classifying non Iris-virginica: %92.5
+
+Process returned 0 (0x0)   execution time : 1.621 s
+Press any key to continue.
+

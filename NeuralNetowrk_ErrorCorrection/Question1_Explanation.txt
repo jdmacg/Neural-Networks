@@ -1,0 +1,39 @@
+By visual inspection using weights that put the linear separator at a y-intercept of 15 (Petal Width)
+And an x-intercept of 40 (Petal Length), should classify Iris Setosa. 
+Using the formula [(-w0/w1),0 and (0,-w0/w2)] for the x and y intercepts: 
+I selected weights of {-5,1/3,1/8}. These weights are tested in the Question1 executable.
+
+The results of this test on the testData is pasted below:
+
+Data Point: 5.1, 3.5, 1.4, 0.2  Predicted class: Iris-setosa. Correct
+Data Point: 4.9, 3, 1.4, 0.2    Predicted class: Iris-setosa. Correct
+Data Point: 4.7, 3.2, 1.3, 0.2  Predicted class: Iris-setosa. Correct
+Data Point: 4.6, 3.1, 1.5, 0.2  Predicted class: Iris-setosa. Correct
+Data Point: 5, 3.6, 1.4, 0.2    Predicted class: Iris-setosa. Correct
+Data Point: 5.4, 3.9, 1.7, 0.4  Predicted class: Iris-setosa. Correct
+Data Point: 4.6, 3.4, 1.4, 0.3  Predicted class: Iris-setosa. Correct
+Data Point: 5, 3.4, 1.5, 0.2    Predicted class: Iris-setosa. Correct
+Data Point: 4.4, 2.9, 1.4, 0.2  Predicted class: Iris-setosa. Correct
+Data Point: 4.9, 3.1, 1.5, 0.1  Predicted class: Iris-setosa. Correct
+Data Point: 5, 2, 3.5, 1        Predicted class: not Iris-setosa. Correct
+Data Point: 5.9, 3, 4.2, 1.5    Predicted class: not Iris-setosa. Correct
+Data Point: 6, 2.2, 4, 1        Predicted class: not Iris-setosa. Correct
+Data Point: 6.1, 2.9, 4.7, 1.4  Predicted class: not Iris-setosa. Correct
+Data Point: 5.6, 2.9, 3.6, 1.3  Predicted class: not Iris-setosa. Correct
+Data Point: 6.7, 3.1, 4.4, 1.4  Predicted class: not Iris-setosa. Correct
+Data Point: 5.6, 3, 4.5, 1.5    Predicted class: not Iris-setosa. Correct
+Data Point: 5.8, 2.7, 4.1, 1    Predicted class: not Iris-setosa. Correct
+Data Point: 6.2, 2.2, 4.5, 1.5  Predicted class: not Iris-setosa. Correct
+Data Point: 5.6, 2.5, 3.9, 1.1  Predicted class: not Iris-setosa. Correct
+Data Point: 6.1, 3, 4.9, 1.8    Predicted class: not Iris-setosa. Correct
+Data Point: 6.4, 2.8, 5.6, 2.1  Predicted class: not Iris-setosa. Correct
+Data Point: 7.2, 3, 5.8, 1.6    Predicted class: not Iris-setosa. Correct
+Data Point: 7.4, 2.8, 6.1, 1.9  Predicted class: not Iris-setosa. Correct
+Data Point: 7.9, 3.8, 6.4, 2    Predicted class: not Iris-setosa. Correct
+Data Point: 6.4, 2.8, 5.6, 2.2  Predicted class: not Iris-setosa. Correct
+Data Point: 6.3, 2.8, 5.1, 1.5  Predicted class: not Iris-setosa. Correct
+Data Point: 6.1, 2.6, 5.6, 1.4  Predicted class: not Iris-setosa. Correct
+Data Point: 7.7, 3, 6.1, 2.3    Predicted class: not Iris-setosa. Correct
+Data Point: 6.3, 3.4, 5.6, 2.4  Predicted class: not Iris-setosa. Correct
+Accuracy classifying Iris-setosa: %100.
+Accuracy classifying non Iris-setosa: %100
