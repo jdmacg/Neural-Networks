@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1476416099 source:c:\users\jordan\documents\github\neural-networks\neuralnetowrk_errorcorrection\backpropagation\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<stdio.h>
+	<sstream>
+	<fstream>
+
+1476424652 source:c:\users\jordan\documents\github\neural-networks\backpropagation\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<stdio.h>
+	<sstream>
+	<fstream>
+	<math.h>
+
