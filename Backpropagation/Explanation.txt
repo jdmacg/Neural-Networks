@@ -1,0 +1,17 @@
+The neural network architecture chosen was 3 layers. One output layer, one hidden layer, and one input layer.
+The reasoning for this was to attempt to recognize patterns or shapes from the input layer into the hidden layer.
+The shapes would then, in theory, be used to recognize the each number.
+
+10 output nodes were used: one for each number in the range 0-9;
+12 hidden layer nodes were used. This was chosen to attempt to correspond to 8 directions of possible lines in the image, and 4 possible quarter circles that could be recognized.
+64 input nodes were used corresponding to the input given.
+
+The weights were initialized to random numbers between -0.5 and 0.5. This range was chosen as the trained weights were expected to be in this range.
+
+The data input was split into 80% training data and 20% testing.
+
+A learning rate of 0.05 was chosen through trial and error. It is small enough that it does not over correct while also being big enough to reach a result in a reasonable amount of time.
+
+Momentum was implemented to avoid getting stuck in local minima.
+
+Through trial and error it was found that when the global error sum was under 100, accuracy of ~95% was be achieved on the test data in a number of minutes.

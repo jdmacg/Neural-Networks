@@ -7,7 +7,7 @@
 	<sstream>
 	<fstream>
 
-1476424652 source:c:\users\jordan\documents\github\neural-networks\backpropagation\main.cpp
+1476754063 source:c:\users\jordan\documents\github\neural-networks\backpropagation\main.cpp
 	<iostream>
 	<string>
 	<vector>
@@ -15,4 +15,7 @@
 	<sstream>
 	<fstream>
 	<math.h>
+	<cassert>
+	<cstdlib>
+	<ctime>
 
